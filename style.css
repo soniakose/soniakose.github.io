@@ -309,6 +309,12 @@ li {
   width: 22px;
 }
 
+.pochta:before {
+    content: attr(data-w) "\0040" attr(data-u);
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
 [data-nav-menu-open] {
   text-align: center;
   background: #C8C8C8;
@@ -740,6 +746,7 @@ li {
       display: block;             /* Make items stack vertically */
       width: 100%;               /* Full width */
       padding: 15px 0;           /* Vertical padding */
+      text-align: center;
   }
 
   .menu-button {
