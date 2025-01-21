@@ -7,6 +7,17 @@
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
    <link href="favicon.png" rel="shortcut icon" type="image/x-icon">
    <link rel="stylesheet" href="style.css">
+   <script>
+       document.addEventListener('DOMContentLoaded', function() {
+           const menuButton = document.querySelector('.menu-button');
+           const navMenu = document.querySelector('.w-nav-menu');
+
+           menuButton.addEventListener('click', function() {
+               this.classList.toggle('w--open');
+               navMenu.classList.toggle('w--nav-menu-open');
+           });
+       });
+   </script>
 </head>
 <body>
    <!-- Navigation -->
@@ -59,6 +70,7 @@
                        <li><a href="project-2.html">Ad Time-in-View Dashboard</a></li>
                        <li>Custom Report Builder</li>
                        <li><a href="CE.html">Consumer-Level Reporting</a></li>
+                       <li><a href="publisher-redesign.html">Publisher" platform redesign</a></li>
                        <li>Ad Tracking Pixel Setup</li>
                        <li>Online Conversion Lift Reporting</li>
                    </ul>
