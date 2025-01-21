@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>CE</title>
+   <meta content="width=device-width, initial-scale=1" name="viewport">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link href="favicon.png" rel="shortcut icon" type="image/x-icon">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
+       <div class="navigation-items">
+           <a href="index.html" class="logo-link w-nav-brand">
+               <h1 class="heading">SONIA KOSE</h1>
+           </a>
+           <div class="navigation-wrap">
+               <nav role="navigation" class="navigation-items w-nav-menu">
+                   <a href="index.html" class="navigation-item w-nav-link">Home</a>
+                   <a href="about.html" class="navigation-item w-nav-link">About me</a>
+                   <a href="project-1.html" class="navigation-item w-nav-link">Projects</a>
+               </nav>
+               <div class="menu-button w-nav-button">
+                   <img src="menu-icon.png" width="22" alt="" class="menu-icon"/>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="section-9">
+       <h3 class="heading-jumbo">Consumer Exposure Reports</h3>
+       <h5>Project Overview</h5>
+       <p class="paragraph-5">
+           Advertisers face challenges in ensuring that consumers are exposed to online ad campaigns for a long enough time to create real impact. IAS had an alpha version of Consumer Exposure reporting for several years, however most of the reports were still created manually. In 2017 I worked on improving existing UI to make it user friendly, before opening it up to a larger audience.
+       </p>
+       <p class="paragraph-6">
+           Consumer Exposure reports are generated in a PDF format. In order to create a PDF user needs to fill out and a submit a form with an ad campaign details.
+       </p>
+
+       <img src="wireflow.jpg" width="932" alt="" class="image-26"/>
+
+       <h5>Stakeholders Interviews</h5>
+       <p>
+           For this project it was particularly important to understand, how current report is generated and what kind of data goes into reports. I've reviewed existing documentation and asked data scientists and data engineers to go over the details with me. Conversations were focused around following questions:
+       </p>
+       <ul role="list" class="list-8">
+           <li>How report is currently generated?</li>
+           <li>What information do we need in order to create a report?</li>
+           <li>What are the restrictions?</li>
+           <li>Where do we get the data from?</li>
+           <li>What data is displayed in the report output?</li>
+           <li>What benchmarks are we using?</li>
+       </ul>
+
+       <h5>User Interviews</h5>
+       <p>
+           I interviewed members of Customer success team (the main users of the report) asking to walk me through the existing process and their pain points. Here is what I've learned:
+       </p>
+       <ul role="list">
+           <li>Report builder is tricky to use</li>
+           <li>Reports are very hard to explain to clients, and there is a confusion around some metrics</li>
+           <li>Some reports metrics are not matching the rest of the system</li>
+       </ul>
+
+       <h5>User Flows</h5>
+       <p>Based on Customer Success team interviews I've proposed new flows for the most important tasks: "Create report", "Edit/Duplicate Report" and "Delete Report".</p>
+       <img src="flows.png" width="787" alt="" class="image-25"/>
+
+       <h5>Design</h5>
+       <p>Using HCI design principles as a guidelines, I gave existing UI a facelift and designed parts of the user flows that were missing.</p>
+
+       <h6>Simplicity</h6>
+       <p>I've started with UI clean up - all of the outdated or irrelevant components were removed from the report builder. I've redesigned campaign selector to display only campaigns qualified for the report. I removed all inessential charts from the report PDF.</p>
+       
+       <img src="simplicity.png" width="649" alt="" class="image-24"/>
+       <img src="Artboard.png" width="359" alt="" class="image-27"/>
+
+       <p>
+           During the interviews, I've learned that PDF is very hard to digest. To help with that, I've introduced a new page template with auto-generated insights. I've worked closely with a tech writers to simplify report language.
+       </p>
+
+       <img src="page%20template.png" width="465" alt="" class="image-35"/>
+
+       <h6>Mapping between system and real world</h6>
+       <p>
+           One of the most challenging steps in the design process was matching UI language closer to industry lingo. Metric names were updated to match current industry standards and I've tied actionable insights to our clients KPIs. I've also made sure that definitions are consistent throughout the UI.
+       </p>
+
+       <img src="mapping.png" width="550" alt="" class="image-28"/>
+
+       <h6>Error prevention</h6>
+       <p>
+           To address clunky report builder experience, I've collaborated with Data Science and Data Engineering teams. We came up with a new set of requirements for the report builder and added clear directions to the report builder form.
+       </p>
+
+       <img src="Screen%20Shot%202019-10-21%20at%209.45.08%20PM.png" width="612" alt="" class="image-32"/>
+       <img src="Screen%20Shot%202019-10-21%20at%209.48.23%20PM.png" width="348" alt="" class="image-33"/>
+
+       <p>Along with updated directions, I've introduced some additional guardrails to prevent users from making errors.</p>
+       
+       <img src="Screen%20Shot%202019-10-21%20at%209.52.36%20PM.png" width="379" alt="" class="image-34"/>
+
+       <h6>Visibility of System Status</h6>
+       <div>
+           To keep users informed on report status, I've introduced an indicator of a status of submitted report request. Once report is generated the user gets also notified by a system e-mail.
+       </div>
+
+       <img src="Screen%20Shot%202019-10-21%20at%201.53.43%20PM.png" alt="" class="image-37"/>
+
+       <div>
+           To keep users informed about UI processes, I've introduced snackbars at the bottom of the screen. User can see the messages when reported is submitted, deleted or there is a potential issues with data.
+       </div>
+
+       <img src="https://cdn.prod.website-files.com/5d960ce24bbd9720fa45b64f/5dadf721db479524db5cac56_Screen%20Shot%202019-10-21%20at%202.20.31%20PM.png" width="488" alt="" class="image-20"/>
+
+       <h6>Consistancy</h6>
+       <p>Next I've applied existing style guides throughout the UI, updating form layout, typography, color palette & control elements.</p>
+       
+       <img src="Screen%20Shot%202019-10-21%20at%209.23.35%20PM.png" width="767" alt="" class="image-36"/>
+
+       <h6>Discoverability</h6>
+       <p>Lastly, Consumer-exposure reports were moved up the top level navigation to improve discoverability.</p>
+       
+       <img src="discoverability.jpeg" width="955" alt="" class="image-23"/>
+
+       <h6>Results</h6>
+       <p>
+           While UI clean up was a fairly quick and straightforward process we got a great response from Customer Success team. We immediately started seeing an increase in number of reports generation requests from the UI, rather than manually generated.
+           <br><br>
+           Auto-generated insights and language updates were also received really well by both existing and new users. It was a good first step toward bringing the report closer to the Ad Tech KPIs - the most difficult task, yet absolutely critical process for the product success.
+       </p>
+
+       <div class="w-row">
+           <div class="w-col w-col-4">
+               <img src="External_view_Lift.png" alt=""/>
+           </div>
+           <div class="w-col w-col-4">
+               <img src="CE_report_builder_FM%20Copy.png" alt=""/>
+           </div>
+           <div class="w-col w-col-4">
+               <img src="CE.jpeg" alt="" class="image-3"/>
+           </div>
+       </div>
+   </div>
+
+   <div class="footer-wrap">
+       <div class="footer-links">
+           <a href="#" class="footer-item">E-mail</a>
+           <a href="#" class="footer-item">Linkedin</a>
+       </div>
+   </div>
+</body>
+</html>
